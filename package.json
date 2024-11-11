@@ -1,0 +1,42 @@
+{
+  "name": "moment-management-system-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.4",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "http-status-codes": "^2.3.0",
+    "joi": "^17.13.3",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.15.0",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "rate-limiter": "^0.2.0",
+    "sequelize": "^6.37.4",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "xss-clean": "^0.1.4",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "sequelize-cli": "^6.6.2"
+  }
+}
