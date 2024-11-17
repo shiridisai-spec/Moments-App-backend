@@ -22,7 +22,12 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 
 app.use(express.json());
 
-app.use(cors({ origin: "http://localhost:3001", credentials: true }));
+app.use(
+  cors({
+    origin: "https://moments-app-frontend.onrender.com",
+    credentials: true,
+  })
+);
 
 // routes
 app.use("/api/v1/moments/auth", authRouter);
