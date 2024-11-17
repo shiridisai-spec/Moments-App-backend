@@ -24,7 +24,10 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://moments-app-frontend.onrender.com",
+    origin:
+      process.env.NODE_ENV === "production"
+        ? "https://moments-app-frontend.onrender.com"
+        : "http://localhost:3001", // local dev URL
     credentials: true,
   })
 );
