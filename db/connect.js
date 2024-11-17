@@ -1,14 +1,22 @@
 const { Pool } = require("pg");
 require("dotenv").config(); // Specify the path to the .env file explicitly
 
+const isProduction = process.env.NODE_ENV === "production";
+const dbConfig = isProduction
+  ? {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    }
+  : {
+      user: process.env.DB_USER,
+      host: process.env.DB_HOST,
+      database: process.env.DB_DATABASE,
+      password: process.env.DB_PASSWORD,
+      port: process.env.DB_PORT,
+    };
+
 // Create a pool for database connection
-const pool = new Pool({
-  user: process.env.DB_USER, // Your PostgreSQL username
-  host: process.env.DB_HOST, // Database host
-  database: process.env.DB_DATABASE, // Your database name
-  password: process.env.DB_PASSWORD, // Your PostgreSQL password
-  port: process.env.DB_PORT, // PostgreSQL default port
-});
+const pool = new Pool(dbConfig);
 
 // Test the database connection
 const testConnection = async () => {
